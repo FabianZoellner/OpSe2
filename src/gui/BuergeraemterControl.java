@@ -24,8 +24,9 @@ public class BuergeraemterControl {
 	   				"Die Bürgerämter wurden gespeichert!");
 	   		}
 	   		else{
+	   			buergeraemterModel.schreibeBuergeraemterInTxtDatei();
 	   			buergeraemterView.zeigeInformationsfensterAn(
-	   				"Noch nicht implementiert!");
+	   				"Die Txt wurde exportiert!");
 	   		}
 	    } 
 		catch(IOException exc){

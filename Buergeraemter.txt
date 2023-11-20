@@ -1,0 +1,5 @@
+Daten des Bürgeramts
+Name des Bürgeramts: hallo
+Öffnungszeit des Bürgeramts: 12.0 - 13.0
+Straße und Hausnummer des Bürgeramts: has 12
+Dienstleistungen des Bürgeramts: alles
