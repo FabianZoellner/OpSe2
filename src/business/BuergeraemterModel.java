@@ -13,7 +13,7 @@ import Observer.*;
 
 public class BuergeraemterModel implements Observable {
  		
-	private Buergeramt buergeramt;
+	private ArrayList<Buergeramt> buergeraemter = new ArrayList<Buergeramt>();
 	
 	private static BuergeraemterModel instance;
 	
@@ -24,12 +24,12 @@ public class BuergeraemterModel implements Observable {
 		
 	}
 
-	public Buergeramt getBuergeramt() {
-		return this.buergeramt;
+	public ArrayList<Buergeramt> getBuergeramt() {
+		return this.buergeraemter;
 	}
 	
-	public void setBuergeramt(Buergeramt buergeramt) {
-		this.buergeramt = buergeramt;
+	public void addBuergeramt(Buergeramt buergeramt) {
+		this.buergeraemter.add(buergeramt);
 		this.notifyObservers();
 	}
  	
@@ -50,7 +50,10 @@ public class BuergeraemterModel implements Observable {
 	    
 	    Product a = (Product) concreteCreator.factoryMethod();
 	    
-	    a.fuegeInDateiHinzu(this.buergeramt);
+	    for(Buergeramt b : this.buergeraemter)
+		{
+	    	a.fuegeInDateiHinzu(b);
+		}
 	    
 	   	a.schliesseDatei();
  	}
@@ -60,7 +63,12 @@ public class BuergeraemterModel implements Observable {
 		
 		TxtProduct a = (TxtProduct) concreteTxtCreator.factoryMethod();
 		
-		a.exportToTxt(this.buergeramt);
+		for(Buergeramt b : this.buergeraemter)
+		{
+			a.exportToTxt(b);
+		}
+		
+		
 		a.closeTxt();
 	}
 
